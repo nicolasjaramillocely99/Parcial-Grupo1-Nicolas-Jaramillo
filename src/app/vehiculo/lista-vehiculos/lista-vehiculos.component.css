@@ -1,8 +1,23 @@
-header{
-    height: 100px;
+header {
+    height: auto;
 }
 
-header img{
+header h2{
+    padding: 15px;
+    border-bottom: solid 2px rgb(235, 231, 231);
+}
+
+header img {
     width: 200px;
-    height: 200px;
+    height: 300px;
+    object-fit: cover;
+}
+
+footer{
+    height: 50px;
+    text-align: center;
+}
+
+footer h3{
+    font-size: 15px;
 }
