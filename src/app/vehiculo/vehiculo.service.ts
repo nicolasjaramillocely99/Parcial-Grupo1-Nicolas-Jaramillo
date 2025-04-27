@@ -9,8 +9,7 @@ import { Vehiculo } from './vehiculo';
 })
 export class VehiculoService {
 
-  private apiUrl: string = environment.baseUrl + 'vehiculos'; // URL to web api
-
+  private apiUrl: string = environment.baseUrl;
   constructor(private http: HttpClient) { }
 
   getVehiculos(): Observable<Vehiculo[]> {

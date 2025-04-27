@@ -1,3 +1,28 @@
-<p>
-  lista-vehiculos works!
-</p>
+<header>
+  <div class="container-fluid">
+    <h2>Tusegundazo.com</h2>
+    <img src="assets/foto_header" alt="" class="photo-header">
+  </div>
+</header>
+
+<main>
+  <div class="container-fluid">
+    <table class="table table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>#</th>
+          <th>Marca</th>
+          <th>Línea</th>
+          <th>Modelo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vehiculo of vehiculos">
+          <td>{{ vehiculo.marca }}</td>
+          <td>{{ vehiculo.linea }}</td>
+          <td>{{ vehiculo.modelo }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</main>
