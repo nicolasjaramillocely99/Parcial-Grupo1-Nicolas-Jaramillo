@@ -7,24 +7,40 @@
 
 <main>
   <div class="container-fluid mt-4">
-    <table class="table table-striped">
-      <thead class="table-dark">
-        <tr>
-          <th>#</th>
-          <th>Marca</th>
-          <th>Línea</th>
-          <th>Modelo</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let vehiculo of vehiculos">
-          <td>{{ vehiculo.id }}</td>
-          <td>{{ vehiculo.marca }}</td>
-          <td>{{ vehiculo.linea }}</td>
-          <td>{{ vehiculo.modelo }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="row">
+      <div class="col-sm-8">
+        <table class="table table-striped">
+          <thead class="table-dark">
+            <tr>
+              <th>#</th>
+              <th>Marca</th>
+              <th>Línea</th>
+              <th>Modelo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let vehiculo of vehiculos">
+              <td>{{ vehiculo.id }}</td>
+              <td>{{ vehiculo.marca }}</td>
+              <td>{{ vehiculo.linea }}</td>
+              <td>{{ vehiculo.modelo }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-sm-4">
+        <!-- segun el mockup aca va la foto del vehiculo y eso -->
+      </div>
+    </div>
+    <!-- Calculo de cuantos carros por marca -->
+    <div class="row mt-2 p-3">
+      <h5>Carros por marca:</h5>
+      <ul>
+        <li *ngFor="let marca of carrosPorMarca | keyvalue">
+          {{ marca.key }}: {{ marca.value }}
+        </li>
+      </ul>
+    </div>
   </div>
 </main>
 <footer class="container-fluid">

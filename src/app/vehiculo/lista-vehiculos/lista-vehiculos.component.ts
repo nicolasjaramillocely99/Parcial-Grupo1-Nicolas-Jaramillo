@@ -11,13 +11,18 @@ import { Vehiculo } from '../vehiculo';
 export class ListaVehiculosComponent implements OnInit {
 
   vehiculos: Array<Vehiculo> = [];
+  carrosPorMarca: {[marca: string]: number} = {};
 
   constructor(private vehiculoService: VehiculoService) { }
   
   getVehiculos(): void{
     this.vehiculoService.getVehiculos().subscribe(vehiculos => {
       this.vehiculos = vehiculos;
+      this.carrosPorMarca = {};
+      vehiculos.forEach(v => {
+        this.carrosPorMarca[v.marca] = (this.carrosPorMarca[v.marca] || 0) + 1;
     });
+  })
   }
   ngOnInit() {
     this.getVehiculos();
